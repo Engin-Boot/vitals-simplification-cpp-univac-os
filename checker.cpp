@@ -20,7 +20,7 @@ bool vitalsAreOk(float bpm, float spo2, float respRate) {
   //int s=spo2Check;
   //int r=resRateCheck;
   //if( b+s+r!=3){
-    return (bpmCheck && spo2Check && respRateCheck);
+    return (bpmCheck(bpm) && spo2Check(spo2) && respRateCheck(resRate);
 }
 
 int main() {
