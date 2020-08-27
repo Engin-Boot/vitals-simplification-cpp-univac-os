@@ -2,7 +2,7 @@
 
 const int bpmLimit[]={70,150};
 const int spo2Limit=90;
-const int resRateLimit[]={30,95};
+const int respRateLimit[]={30,95};
 
 bool bpmCheck(float bpm){
   return  (bpm>bpmLimit[0] && bpm<bpmLimit[1]);
@@ -12,7 +12,7 @@ bool spo2Check(float spo2){
 }
 
 bool resRateCheck(float respRate){
-  return  (respRate>resRateLimit[0] && resRate<resRateLimit[1]);
+  return  (respRate>resRateLimit[0] && respRate<respRateLimit[1]);
 }
 
 bool vitalsAreOk(float bpm, float spo2, float respRate) {
