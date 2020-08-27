@@ -16,12 +16,11 @@ bool resRateCheck(float resRate){
 }
 
 bool vitalsAreOk(float bpm, float spo2, float respRate) {
-  int b=bpmCheck;
-  int s=spo2Check;
-  int r=resRateCheck;
-  if( b+s+r!=3){
-    return false;}
-  return true;
+//  int b=bpmCheck;
+  //int s=spo2Check;
+  //int r=resRateCheck;
+  //if( b+s+r!=3){
+    return (bpmCheck && spo2Check && respRateCheck);
 }
 
 int main() {
