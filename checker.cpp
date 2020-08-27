@@ -1,10 +1,10 @@
 #include <assert.h>
 
-const int bpmLimit[]={70,150};
-const int spo2Limit=90;
-const int respRateLimit[]={30,95};
+const float bpmLimit[]={70,150};
+const float spo2Limit=90;
+const float respRateLimit[]={30,95};
 
-bool bpmCheck(float bpm){
+/*bool bpmCheck(float bpm){
   return  (bpm>bpmLimit[0] && bpm<bpmLimit[1]);
 }
 bool spo2Check(float spo2){
@@ -14,11 +14,11 @@ bool spo2Check(float spo2){
 bool respRateCheck(float respRate){
   return  (respRate>respRateLimit[0] && respRate<respRateLimit[1]);
 }
-
-bool vitalIsOk(float value, int limits[2]){
+*/
+bool vitalIsOk(float value, const float *limits[2]){
   return (value >= limits[0] && value <= limits[1]);
  }
-bool vitalOk (float value, int limit)
+bool vitalOk (float value,const float limit)
 {
   return (value >= limit);
 }
