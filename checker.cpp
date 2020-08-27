@@ -11,8 +11,8 @@ bool spo2Check(float spo2){
   return  (spo2>spo2Limit);
 }
 
-bool resRateCheck(float resRate){
-  return  (bpm>resRateLimit[0] && bpm<resRateLimit[1]);
+bool resRateCheck(float respRate){
+  return  (respRate>resRateLimit[0] && resRate<resRateLimit[1]);
 }
 
 bool vitalsAreOk(float bpm, float spo2, float respRate) {
