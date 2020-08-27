@@ -16,9 +16,7 @@ bool respRateCheck(float respRate){
 }
 
 bool vitalsAreOk(float bpm, float spo2, float respRate) {
-//  int b=bpmCheck;
-  //int s=spo2Check;
-  //int r=resRateCheck;
+
   if( int(bpmCheck(bpm))+ int(spo2Check(spo2)) + int(respRateCheck(respRate))!=3){
     return false;}
   else
