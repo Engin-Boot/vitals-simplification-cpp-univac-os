@@ -15,7 +15,7 @@ bool respRateCheck(float respRate){
   return  (respRate>respRateLimit[0] && respRate<respRateLimit[1]);
 }
 */
-bool vitalIsOk(float value, const float *limits[2]){
+bool vitalIsOk(float value, const float *limits){
   return (value >= limits[0] && value <= limits[1]);
  }
 bool vitalOk (float value,const float limit)
@@ -38,9 +38,7 @@ int main() {
   assert(vitalsAreOk(80, 95, 60) == true);  // 1 1  1
   assert(vitalsAreOk(60, 90, 40) == false); // 0 1  1
   assert(vitalsAreOk(90,85,70)==false);// 1 0 1
- assert(vitalsAreOk(100,95,100)==false);// 1 1 0
+  assert(vitalsAreOk(100,95,100)==false);// 1 1 0
   assert(vitalsAreOk(50,85,99)==false);//0  0 0
-  
-  //assert(vitalsIsOk(3,1,5)==true);//1<3<5
-  //assert(vitalsIsOk(40,10,30)==false); //10<40>30
+
 }
