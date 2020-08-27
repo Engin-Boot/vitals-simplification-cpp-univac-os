@@ -40,5 +40,5 @@ int main() {
   assert(vitalsIsOk(40,10,30)==false); //10<40>30
   assert(vitalsIsOk(11,11,41)==true);//11=11<41
   assert(vitalsIsOk(11,41,41)==true); //11<41=41
-  assassert(vitalsIsOk(11,11,11)==true);
+  assert(vitalsIsOk(11,11,11)==true);
 }
