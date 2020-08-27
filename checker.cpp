@@ -30,7 +30,8 @@ bool vitalsAreOk(float bpm, float spo2, float respRate) {
   //}
   //else
     //return true;
-  vitalIsOk(bpm,bpmLimit) && vitalOk(spo2,spo2Limit) && vitalIsOk(respRate,respRateLimit));
+  if(int(vitalIsOk(bpm,bpmLimit)) +int( vitalOk(spo2,spo2Limit)) +int(vitalIsOk(respRate,respRateLimit))!=3){return false;}
+  return true;
    // return (bpmCheck(bpm) && spo2Check(spo2) && respRateCheck(respRate);
 }//CCN-2
 
