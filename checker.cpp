@@ -18,7 +18,7 @@ bool respRateCheck(float respRate){
 bool vitalIsOk(float value, const float *limits){
  // return (value >= limits[0] && value <= limits[1]);
   if(value<limits[0]){cout<<"below"<<endl;return false;}
-  else if(value>limits[0]){cout<<"above"<<endl;return false;}
+  else if(value>limits[1]){cout<<"above"<<endl;return false;}
   else {cout<<"all okay"<<endl;return true;}
  }
 bool vitalsAreOk(float bpm, float spo2, float respRate) {
