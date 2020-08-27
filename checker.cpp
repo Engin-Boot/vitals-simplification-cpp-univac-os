@@ -12,7 +12,7 @@ bool spo2Check(float spo2){
 }
 
 bool resRateCheck(float respRate){
-  return  (respRate>resRateLimit[0] && respRate<respRateLimit[1]);
+  return  (respRate>respRateLimit[0] && respRate<respRateLimit[1]);
 }
 
 bool vitalsAreOk(float bpm, float spo2, float respRate) {
@@ -20,7 +20,7 @@ bool vitalsAreOk(float bpm, float spo2, float respRate) {
   //int s=spo2Check;
   //int r=resRateCheck;
   //if( b+s+r!=3){
-    return (bpmCheck(bpm) && spo2Check(spo2) && respRateCheck(resRate);
+    return (bpmCheck(bpm) && spo2Check(spo2) && respRateCheck(respRate);
 }
 
 int main() {
