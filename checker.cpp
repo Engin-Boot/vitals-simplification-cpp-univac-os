@@ -11,7 +11,7 @@ bool spo2Check(float spo2){
   return  (spo2>spo2Limit);
 }
 
-bool resRateCheck(float respRate){
+bool respRateCheck(float respRate){
   return  (respRate>respRateLimit[0] && respRate<respRateLimit[1]);
 }
 
