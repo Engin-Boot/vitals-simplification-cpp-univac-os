@@ -1,9 +1,7 @@
 #include <assert.h>
-
 const float bpmLimit[]={70,150};
 const float spo2Limit=90;
 const float respRateLimit[]={30,95};
-
 /*bool bpmCheck(float bpm){
   return  (bpm>bpmLimit[0] && bpm<bpmLimit[1]);
 }
@@ -18,21 +16,16 @@ bool respRateCheck(float respRate){
 bool vitalIsOk(float value, const float *limits){
   return (value >= limits[0] && value <= limits[1]);
  }
-bool vitalOk (float value,const float limit)
-{
+bool vitalOk (float value,const float limit){
   return (value >= limit);
 }
-
 bool vitalsAreOk(float bpm, float spo2, float respRate) {
-
-  //if( int(bpmCheck(bpm))+ int(spo2Check(spo2)) + int(respRateCheck(respRate))!=3){
-   // return false;
-  //}
-  //else
-    //return true;
+  /*if( int(bpmCheck(bpm))+ int(spo2Check(spo2)) + int(respRateCheck(respRate))!=3){return false;}
+  else return true;
+  return (bpmCheck(bpm) && spo2Check(spo2) && respRateCheck(respRate);
+*/
   if(int(vitalIsOk(bpm,bpmLimit)) +int( vitalOk(spo2,spo2Limit)) +int(vitalIsOk(respRate,respRateLimit))!=3){return false;}
-  return true;
-   // return (bpmCheck(bpm) && spo2Check(spo2) && respRateCheck(respRate);
+  else return true;
 }//CCN-2
 
 int main() {
