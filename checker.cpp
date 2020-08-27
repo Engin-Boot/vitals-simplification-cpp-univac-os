@@ -1,6 +1,6 @@
 #include <assert.h>
 const float bpmLimit[]={70,150};
-const float spo2Limit[]=90,100;
+const float spo2Limit[]={90,100};//make INT_MAX
 const float respRateLimit[]={30,95};
 /*bool bpmCheck(float bpm){
   return  (bpm>bpmLimit[0] && bpm<bpmLimit[1]);
