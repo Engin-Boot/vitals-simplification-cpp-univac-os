@@ -27,9 +27,6 @@ bool vitalsAreOk(float bpm, float spo2, float respRate) {
   return (bpmCheck(bpm) && spo2Check(spo2) && respRateCheck(respRate);
 */
   int bool_array[]={int(vitalIsOk(bpm,bpmLimit)),int(vitalIsOk(spo2,spo2Limit)),int(vitalIsOk(respRate,respRateLimit))};
-  if(bool_array[0]!=0){cout<<"BPM good:--"<<bpm<<endl;}
-  if(bool_array[1]!=0){cout<<"SPO2 good:--"<<spo2<<endl;}
-  if(bool_array[2]!=0){cout<<"RESPRATE good:--"<<respRate<<endl;}
   if(int(vitalIsOk(bpm,bpmLimit)) +int( vitalIsOk(spo2,spo2Limit)) +int(vitalIsOk(respRate,respRateLimit))!=3){return false;}
   else return true;
   
