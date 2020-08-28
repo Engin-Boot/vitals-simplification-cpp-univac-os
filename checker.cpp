@@ -29,9 +29,9 @@ class vitals
  public:
     const char* vitalIsOk(float value,float lower,float upper )
     {
-      if(value<lower){cout<<"below"<<endl;}
-      else if(value>upper){cout<<"above"<<endl;}
-      else {cout<<"all okay"<<endl;}
+      if(value<lower)return "below";}
+      else if(value>upper){return "above";}
+      else {return "all okay";}
     }
     
     void vitalsAreOk(float bpm, float spo2, float respRate) 
