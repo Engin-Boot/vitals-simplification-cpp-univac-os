@@ -8,6 +8,7 @@ class Alert
 {
   public:
     virtual void sendAlert(const char* vitalName,const char* value)=0;//pure virtual fun
+    virtual float showValue(const float val)=0;
 };
 
 class AlertSms:public Alert
@@ -15,6 +16,9 @@ class AlertSms:public Alert
   public:
     void sendAlert(const char* vitalName,const char* value) override{
       cout<<"SMS:"<<vitalName<<"--------"<<value<<endl;}
+    float showValue(const float val) override{
+      cout<<"Value;---:"<<val<<endl;
+    }
 };
 
 class AlertSound:public Alert
@@ -22,6 +26,9 @@ class AlertSound:public Alert
   public:
     void sendAlert(const char* vitalName,const char* value) override{
       cout<<"SOUND:"<<vitalName<<"--------"<<value<<endl;}
+     float showValue(const float val) override{
+      cout<<"Value;---:"<<val<<endl;
+    } 
 };
 
 class vitals
@@ -49,13 +56,16 @@ class vitals
         //derv class addr pass to bas class pointer
         alert=&alertSms;
         alert->sendAlert("BPM",bpmlevel);
+        alert->showValue(bpm);
         alert->sendAlert("SPO2",spo2level);
+        alert->showValue(spo2);
         alert->sendAlert("RESPRATE",respRatelevel);
+        alert->showValue(respRate);
         
         alert=&alertSound;
-        alert->sendAlert("BPM", bpmlevel);
-        alert->sendAlert("SPO2", spo2level);
-        alert->sendAlert("RESPRATE", respRatelevel);
+        alert->sendAlert("BPM", bpmlevel);alert->showValue(bpm);
+        alert->sendAlert("SPO2", spo2level);alert->showValue(spo2);
+        alert->sendAlert("RESPRATE", respRatelevel);alert->showValue(respRate);
     }//CCN-2
 };
 
