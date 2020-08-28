@@ -29,8 +29,8 @@ class vitals
  public:
     const char* vitalIsOk(float value,float lower,float upper )
     {
-      if(value<lower)return "below";}
-      else if(value>upper){return "above";}
+      if(value< lower){return "below";}
+      else if(value> upper){return "above";}
       else {return "all okay";}
     }
     
