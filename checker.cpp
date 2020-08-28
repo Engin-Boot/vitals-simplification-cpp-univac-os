@@ -24,18 +24,18 @@ class AlertSound:public Alert
 
 class vitals{
  public:
-    void vitalIsOk(float value, const float *limits){
-      if(value<limits[0]){cout<<"below"<<endl;}
-      else if(value>limits[1]){cout<<"above"<<endl;}
+    void vitalIsOk(float value,float lower,float upper ){
+      if(value<lower){cout<<"below"<<endl;}
+      else if(value>upper){cout<<"above"<<endl;}
       else {cout<<"all okay"<<endl;}
- }
+    }
     void vitalsAreOk(float bpm, float spo2, float respRate) {
        // int bool_array[]={int(vitalIsOk(bpm,bpmLimit)),int(vitalIsOk(spo2,spo2Limit)),int(vitalIsOk(respRate,respRateLimit))};
         //if(int(vitalIsOk(bpm,bpmLimit)) +int( vitalIsOk(spo2,spo2Limit)) +int(vitalIsOk(respRate,respRateLimit))!=3){return false;}
         //else return true;
-        const char* bpmlevel=vitalIsOk(bpm,bpmLimit);
-        const char* spo2level=vitalIsOk(spo2,spo2Limit);
-        const char* respRatelevel=vitalIsOk(respRate,respRateLimit);
+        const char* bpmlevel=vitalIsOk(bpm,70,150);
+        const char* spo2level=vitalIsOk(spo2,90,100);
+        const char* respRatelevel=vitalIsOk(respRate,30,95);
         //alerting
         Alert *alert;
         AlertSms alertSms;
@@ -53,7 +53,8 @@ class vitals{
         
     }//CCN-2
 };
-int main() {
+int main() 
+{
   /*assert(vitalsAreOk(80, 95, 60) == true);  // 1 1  1
   assert(vitalsAreOk(60, 90, 40) == false); // 0 1  1
   assert(vitalsAreOk(90,85,70)==false);// 1 0 1
@@ -62,5 +63,4 @@ int main() {
   vitals vital;
   vital.vitalsAreOk(80,95,60);
   vital.vitalsAreOk(60, 90, 40);
-
 }
