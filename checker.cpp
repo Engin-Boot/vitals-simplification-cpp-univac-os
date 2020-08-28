@@ -24,7 +24,7 @@ class AlertSound:public Alert
 
 class vitals{
  public:
-    void vitalIsOk(float value,float lower,float upper ){
+    const char* vitalIsOk(float value,float lower,float upper ){
       if(value<lower){cout<<"below"<<endl;}
       else if(value>upper){cout<<"above"<<endl;}
       else {cout<<"all okay"<<endl;}
