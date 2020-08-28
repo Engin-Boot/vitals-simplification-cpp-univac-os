@@ -14,14 +14,14 @@ class AlertSms:public Alert
 {
   public:
     void sendAlert(const char* vitalName,const char* value) override{
-      cout<<"SMS:"<<vitalName<<"--------"<<value<<endl;
+      cout<<"SMS:"<<vitalName<<"--------"<<value<<endl;}
 };
 
 class AlertSound:public Alert
 {
   public:
     void sendAlert(const char* vitalName,const char* value) override{
-      cout<<"SOUND:"<<vitalName<<"--------"<<value<<endl;
+      cout<<"SOUND:"<<vitalName<<"--------"<<value<<endl;}
 };
 
 class vitals
