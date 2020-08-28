@@ -9,27 +9,33 @@ class Alert
   public:
     virtual void sendAlert(const char* vitalName,const char* value)=0;//pure virtual fun
 };
+
 class AlertSms:public Alert
 {
   public:
     void sendAlert(const char* vitalName,const char* value) override{
       cout<<"SMS:"<<vitalName<<"--------"<<value<<endl;
-}
+};
+
 class AlertSound:public Alert
 {
   public:
     void sendAlert(const char* vitalName,const char* value) override{
       cout<<"SOUND:"<<vitalName<<"--------"<<value<<endl;
-}
+};
 
-class vitals{
+class vitals
+{
  public:
-    const char* vitalIsOk(float value,float lower,float upper ){
+    const char* vitalIsOk(float value,float lower,float upper )
+    {
       if(value<lower){cout<<"below"<<endl;}
       else if(value>upper){cout<<"above"<<endl;}
       else {cout<<"all okay"<<endl;}
     }
-    void vitalsAreOk(float bpm, float spo2, float respRate) {
+    
+    void vitalsAreOk(float bpm, float spo2, float respRate) 
+    {
        // int bool_array[]={int(vitalIsOk(bpm,bpmLimit)),int(vitalIsOk(spo2,spo2Limit)),int(vitalIsOk(respRate,respRateLimit))};
         //if(int(vitalIsOk(bpm,bpmLimit)) +int( vitalIsOk(spo2,spo2Limit)) +int(vitalIsOk(respRate,respRateLimit))!=3){return false;}
         //else return true;
@@ -50,9 +56,9 @@ class vitals{
         alert->sendAlert("BPM", bpmlevel);
         alert->sendAlert("SPO2", spo2level);
         alert->sendAlert("RESPRATE", respRatelevel);
-        
     }//CCN-2
 };
+
 int main() 
 {
   /*assert(vitalsAreOk(80, 95, 60) == true);  // 1 1  1
