@@ -7,18 +7,18 @@ const float respRateLimit[]={30,95};
 class Alert
 {
   public:
-    virtual void sendAlert(const char*,const char*)=0;//pure virtual fun
+    virtual void sendAlert(const char* vitalName,const char* value)=0;//pure virtual fun
 };
 class AlertSms:public Alert
 {
   public:
-    void sendAlert(const char* vitalName,const char* value){
+    void sendAlert(const char* vitalName,const char* value) override{
       cout<<"SMS:"<<vitalName<<"--------"<<value<<endl;
 }
 class AlertSound:public Alert
 {
   public:
-    void sendAlert(const char* vitalName,const char* value){
+    void sendAlert(const char* vitalName,const char* value) override{
       cout<<"SOUND:"<<vitalName<<"--------"<<value<<endl;
 }
 
@@ -44,12 +44,12 @@ class vitals{
         alert=&alertSms;
         alert->sendAlert("BPM",bpmlevel);
         alert->sendAlert("SPO2",spo2level);
-        alert->sendAlert("RESPRATE",resRatelevel);
+        alert->sendAlert("RESPRATE",respRatelevel);
         
         alert=&alertSound;
         alert->sendAlert("BPM", bpmlevel);
         alert->sendAlert("SPO2", spo2level);
-        alert->sendAlert("RESPRATE", resRatelevel);
+        alert->sendAlert("RESPRATE", respRatelevel);
         
     }//CCN-2
 };
