@@ -41,15 +41,15 @@ class vitals{
         AlertSms alertSms;
         AlertSound alertSound;
         //derv class addr pass to bas class pointer
-        alert=&alertSms
+        alert=&alertSms;
         alert->sendAlert("BPM",bpmLevel);
         alert->sendAlert("SPO2",spo2Level);
         alert->sendAlert("RESPRATE",resRateLevel);
         
-        alert=&alertSound
-        alert->sendAlert("BPM",bpmLevel);
-        alert->sendAlert("SPO2",spo2Level);
-        alert->sendAlert("RESPRATE",resRateLevel);
+        alert=&alertSound;
+        alert->sendAlert("BPM", bpmLevel);
+        alert->sendAlert("SPO2", spo2Level);
+        alert->sendAlert("RESPRATE", resRateLevel);
         
     }//CCN-2
 };
