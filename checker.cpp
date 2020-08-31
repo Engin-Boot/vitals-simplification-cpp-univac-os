@@ -1,6 +1,7 @@
 #include <assert.h>
 #include<iostream>
 #include<fstream>
+#include<string>
 using namespace std;
 const float bpmLimit[]={70,150};
 const float spo2Limit[]={90,100};//make INT_MAX
