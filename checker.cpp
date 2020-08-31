@@ -99,7 +99,7 @@ int main()
   //vital.vitalsAreOk(60, 90, 40);
   vital.vitalsList(vitalarr,2);*/
   ifstream ip("test_case.csv");
-  if(!ip.open()) cout<<"FILE OPEN ERROR"<<endl;
+  if(!ip.is_open()) cout<<"FILE OPEN ERROR"<<endl;
   int size=0;//init
   while(ip.good())
   {
