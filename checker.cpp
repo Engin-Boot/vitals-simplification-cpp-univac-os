@@ -30,6 +30,12 @@ class AlertSound:public Alert
       cout<<"Value;---:"<<val<<endl;
     } 
 };
+struct vitalArray
+{
+  float bpm_val;
+  float spo2_val;
+  float respRate_val;
+};
 
 class vitals
 {
@@ -40,12 +46,8 @@ class vitals
       else if(value> limits[1]){return "above";}
       else {return "all okay";}
     }
-    
     void vitalsAreOk(float bpm, float spo2, float respRate) 
     {
-       // int bool_array[]={int(vitalIsOk(bpm,bpmLimit)),int(vitalIsOk(spo2,spo2Limit)),int(vitalIsOk(respRate,respRateLimit))};
-        //if(int(vitalIsOk(bpm,bpmLimit)) +int( vitalIsOk(spo2,spo2Limit)) +int(vitalIsOk(respRate,respRateLimit))!=3){return false;}
-        //else return true;
         const char* bpmlevel=vitalIsOk(bpm,bpmLimit);
         const char* spo2level=vitalIsOk(spo2,spo2Limit);
         const char* respRatelevel=vitalIsOk(respRate,respRateLimit);
@@ -53,7 +55,7 @@ class vitals
         Alert *alert;
         AlertSms alertSms;
         AlertSound alertSound;
-        //derv class addr pass to bas class pointer
+        //dervied class address pass to base class pointer
         alert=&alertSms;
         alert->sendAlert("BPM",bpmlevel);
         alert->showValue(bpm);
@@ -66,7 +68,14 @@ class vitals
         alert->sendAlert("BPM", bpmlevel);alert->showValue(bpm);
         alert->sendAlert("SPO2", spo2level);alert->showValue(spo2);
         alert->sendAlert("RESPRATE", respRatelevel);alert->showValue(respRate);
-    }//CCN-2
+    }
+    void vitalsList(vitalarr[],int size)
+    {
+      for(int i=0;i<size;i++)
+      {
+        vitalAreOk(vitalarr[i].bpm_val;vitalarr[i].spo2_val;vitalarr[i].respRate_val);
+      }
+    }
 };
 
 int main() 
@@ -76,7 +85,15 @@ int main()
   assert(vitalsAreOk(90,85,70)==false);// 1 0 1
   assert(vitalsAreOk(100,95,100)==false);// 1 1 0
   assert(vitalsAreOk(50,85,99)==false);//0  0 0 */
+  vitalArray vitalarr[2];//can be dynamic malloc
+  vitalarr[0].bpm_val=80;
+  vitalarr[0].spo2_val=95;
+  vitalarr[0].respRate=60;
+  vitalarr[1].bpm_val=60;
+  vitalarr[1].spo2_val=90;
+  vitalarr[1].respRate=40;
   vitals vital;
-  vital.vitalsAreOk(80,95,60);
-  vital.vitalsAreOk(60, 90, 40);
+  //vital.vitalsAreOk(80,95,60);
+  //vital.vitalsAreOk(60, 90, 40);
+  vital.vitalsList(vitarr,2);
 }
