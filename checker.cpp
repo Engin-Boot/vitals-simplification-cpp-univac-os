@@ -1,5 +1,6 @@
 #include <assert.h>
 #include<iostream>
+#include<fstream>
 using namespace std;
 const float bpmLimit[]={70,150};
 const float spo2Limit[]={90,100};//make INT_MAX
@@ -86,8 +87,8 @@ int main()
   assert(vitalsAreOk(90,85,70)==false);// 1 0 1
   assert(vitalsAreOk(100,95,100)==false);// 1 1 0
   assert(vitalsAreOk(50,85,99)==false);//0  0 0 */
-  vitalArray vitalarr[2];//can be dynamic malloc
-  vitalarr[0].bpm_val=80;
+  vitalArray vitalarr[5];//can be dynamic malloc
+  /*vitalarr[0].bpm_val=80;
   vitalarr[0].spo2_val=95;
   vitalarr[0].respRate_val=60;
   vitalarr[1].bpm_val=60;
@@ -96,5 +97,17 @@ int main()
   vitals vital;
   //vital.vitalsAreOk(80,95,60);
   //vital.vitalsAreOk(60, 90, 40);
-  vital.vitalsList(vitalarr,2);
+  vital.vitalsList(vitalarr,2);*/
+  ifstream ip("test_case.csv");
+  if(!ip.open()) cout<<"FILE OPEN ERROR"<<endl;
+  int size=0;//init
+  while(ip.good())
+  {
+    getline(ip,vitalarr[size].bpm_val,',');
+    getline(ip,vitalarr[size].spo2_val,',');
+    getline(ip,vitalarr[size].respRate_val,'\n');
+    size++;
+  }
+  vital.vitalsList(vitalarr,5);
+  ip.close();
 }
