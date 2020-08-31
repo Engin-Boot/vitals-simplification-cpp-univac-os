@@ -103,9 +103,9 @@ int main()
   int size=0;//init
   while(ip.good())
   {
-    getline(ip,vitalarr[size].bpm_val,',');
-    getline(ip,vitalarr[size].spo2_val,',');
-    getline(ip,vitalarr[size].respRate_val,'\n');
+    getline(ip,vitalarr[size].bpm_val,",");
+    getline(ip,vitalarr[size].spo2_val,",");
+    getline(ip,vitalarr[size].respRate_val,"\n");
     size++;
   }
   vital.vitalsList(vitalarr,5);
