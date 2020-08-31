@@ -30,6 +30,7 @@ class AlertSound:public Alert
       cout<<"Value;---:"<<val<<endl;
     } 
 };
+
 struct vitalArray
 {
   float bpm_val;
@@ -88,12 +89,12 @@ int main()
   vitalArray vitalarr[2];//can be dynamic malloc
   vitalarr[0].bpm_val=80;
   vitalarr[0].spo2_val=95;
-  vitalarr[0].respRate=60;
+  vitalarr[0].respRate_val=60;
   vitalarr[1].bpm_val=60;
   vitalarr[1].spo2_val=90;
-  vitalarr[1].respRate=40;
+  vitalarr[1].respRate_val=40;
   vitals vital;
   //vital.vitalsAreOk(80,95,60);
   //vital.vitalsAreOk(60, 90, 40);
-  vital.vitalsList(vitarr,2);
+  vital.vitalsList(vitalarr,2);
 }
