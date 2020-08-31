@@ -74,7 +74,7 @@ class vitals
     {
       for(int i=0;i<size;i++)
       {
-        vitalAreOk(vitalarr[i].bpm_val,vitalarr[i].spo2_val,vitalarr[i].respRate_val);
+        vitalsAreOk(vitalarr[i].bpm_val,vitalarr[i].spo2_val,vitalarr[i].respRate_val);
       }
     }
 };
