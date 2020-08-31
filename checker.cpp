@@ -70,7 +70,7 @@ class vitals
         alert->sendAlert("SPO2", spo2level);alert->showValue(spo2);
         alert->sendAlert("RESPRATE", respRatelevel);alert->showValue(respRate);
     }
-    void vitalsList(vitalarr[],int size)
+    void vitalsList(vitalArray vitalarr[],int size)
     {
       for(int i=0;i<size;i++)
       {
